@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.login2"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:targetSdkVersion="30" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Login2">
+        <activity android:name=".CONTACTUS"></activity>
+        <activity android:name=".booking" />
+        <activity android:name=".Mainprof" />
+        <activity android:name=".Acadmy_details" android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"/>
+        <activity android:name=".Addacadamy" />
+        <activity android:name=".Playground_Details" android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"/>
+        <activity android:name=".ADDplayground" />
+        <activity android:name=".profileActivity" android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"/>
+        <activity android:name=".ADD_LEAGUE" />
+        <activity android:name=".Project" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".Login" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.EDIT" />
+                <action android:name="android.intent.action.INSERT" />
+                <action android:name="android.intent.action.DELETE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
