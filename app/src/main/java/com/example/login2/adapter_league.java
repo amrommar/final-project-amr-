@@ -105,6 +105,7 @@ public class adapter_league extends FirebaseRecyclerAdapter<leagues, adapter_lea
                 return true;
             }
         });
+
     }
 
     public void alertDelete(View v, final String id) {
