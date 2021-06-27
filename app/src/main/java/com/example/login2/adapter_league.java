@@ -64,7 +64,7 @@ public class adapter_league extends FirebaseRecyclerAdapter<leagues, adapter_lea
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
-                    String Lname = snapshot.child("league name").getValue().toString();
+                    String Lname = snapshot.child("league_name").getValue().toString();
                     String Locname = snapshot.child("location").getValue().toString();
                     String image = snapshot.child("image").getValue().toString();
 

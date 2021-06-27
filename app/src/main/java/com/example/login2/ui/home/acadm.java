@@ -1,23 +1,23 @@
 package com.example.login2.ui.home;
 
 public class acadm {
-    public String name,location,image;
+    public String acadamy_name ,location,image;
 
     public acadm() {
     }
 
-    public acadm(String name, String location, String image) {
-        this.name = name;
+    public acadm(String acadamy_name, String location, String image) {
+        this.acadamy_name = acadamy_name;
         this.location = location;
         this.image = image;
     }
 
-    public String getName() {
-        return name;
+    public String getAcadamy_name() {
+        return acadamy_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAcadamy_name(String acadamy_name) {
+        this.acadamy_name = acadamy_name;
     }
 
     public String getLocation() {

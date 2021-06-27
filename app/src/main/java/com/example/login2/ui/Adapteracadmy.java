@@ -78,7 +78,7 @@ public class Adapteracadmy extends FirebaseRecyclerAdapter<acadm, Adapteracadmy.
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
-                    String Lname = snapshot.child("Acadamy name").getValue().toString();
+                    String Lname = snapshot.child("acadamy_name").getValue().toString();
                     String Locname = snapshot.child("location").getValue().toString();
                     String image = snapshot.child("image").getValue().toString();
 

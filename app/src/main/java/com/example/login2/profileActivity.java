@@ -24,7 +24,7 @@ import com.squareup.picasso.Picasso;
 public class profileActivity extends AppCompatActivity {
     private String recevierleague;
     private ImageView imageView;
-    private TextView profileleaguename,profilelocation,profileprice,profileemail,profileusername,profilephone;
+    private TextView profileleaguename,profilelocation,profileprice,profileemail,profileusername,profilephone,detailed,playground,numder;
     Button Add;
     private DatabaseReference referencee;
     private static final int    REQUEST_CALL=1;
@@ -47,6 +47,10 @@ public class profileActivity extends AppCompatActivity {
         profileprice=findViewById(R.id.PTJ);
         profileemail=findViewById(R.id.E);
         profileusername=findViewById(R.id.UN);
+        detailed=findViewById(R.id.textView14);
+        playground=findViewById(R.id.textView15);
+        numder=findViewById(R.id.textView16);
+
 
 
         RetriveInformation();
@@ -64,12 +68,16 @@ public class profileActivity extends AppCompatActivity {
                 {
                     //   String IMAGE=snapshot.child("image ").getValue().toString();
 
-                    String LEAGUENAME=snapshot.child("league name").getValue().toString();
+                    String LEAGUENAME=snapshot.child("league_name").getValue().toString();
                     String LOCATION=snapshot.child("location").getValue().toString();
                     String USERNAME=snapshot.child("person name").getValue().toString();
                     String PHONE=snapshot.child("phone number").getValue().toString();
                     String PRICE=snapshot.child("price").getValue().toString();
                     String EMAIL=snapshot.child("email").getValue().toString();
+
+                    String detailedadd=snapshot.child("detailed_address").getValue().toString();
+                    String playname=snapshot.child("playground").getValue().toString();
+                    String numderr=snapshot.child("number").getValue().toString();
 
                     String image=snapshot.child("image").getValue().toString();
                     Picasso.get().load(image).placeholder(R.drawable.addtwo).into(imageView);
@@ -81,6 +89,9 @@ public class profileActivity extends AppCompatActivity {
                     profilephone.setText(PHONE);
                     profileprice.setText(PRICE);
                     profileusername.setText(USERNAME);
+                    detailed.setText(detailedadd);
+                    playground.setText(playname);
+                    numder.setText(numderr);
                     //kugjgklgjfc123510
 
                 }

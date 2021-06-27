@@ -2,6 +2,7 @@ package com.example.login2;
 
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -28,12 +29,13 @@ import java.util.HashMap;
 
 public class ADDplayground extends AppCompatActivity {
 
-    EditText phoneNo, personeName, leagueName, email, location,price;
+    EditText phoneNo, personeName, leagueName,  location,price,open,close;
     Button save;
     ImageView imageView;
     FirebaseDatabase rootNode;
     DatabaseReference referencee = FirebaseDatabase.getInstance().getReference().child("playground");
     StorageReference storageReference= FirebaseStorage.getInstance().getReference().child("image");
+    SharedPreferences sharedPreferences;
 
 
     private Uri imageuri;
@@ -46,11 +48,21 @@ public class ADDplayground extends AppCompatActivity {
         personeName=findViewById(R.id.personeName);
         phoneNo=findViewById(R.id.phoneNo);
         leagueName=findViewById(R.id.leagueName);
-        email=findViewById(R.id.email);
+    //    email=findViewById(R.id.email);
         location=findViewById(R.id.location);
         price=findViewById(R.id.price);
+
+
+        open=findViewById(R.id.open);
+        close=findViewById(R.id.close);
+
+
         save=findViewById(R.id.save);
         imageView=findViewById(R.id.imageView);
+        sharedPreferences=getSharedPreferences("myPref",MODE_PRIVATE);
+        String emaill = sharedPreferences.getString("emaail",null);
+
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,9 +79,14 @@ public class ADDplayground extends AppCompatActivity {
                 String txt_location=location.getText().toString();
                 String txt_leagueName=leagueName.getText().toString();
                 String txt_price=price.getText().toString();
-                String txt_email=email.getText().toString();
-                if (txt_email.isEmpty() || txt_leagueName.isEmpty() || txt_location.isEmpty() ||txt_personName.isEmpty() ||
-                        txt_phoneNo.isEmpty() || txt_price.isEmpty())
+
+                String txt_open=open.getText().toString();
+                String txt_close=close.getText().toString();
+
+
+        //        String txt_email=email.getText().toString();
+                if ( txt_leagueName.isEmpty() || txt_location.isEmpty() ||txt_personName.isEmpty() ||
+                        txt_phoneNo.isEmpty() || txt_price.isEmpty()|| txt_open.isEmpty()|| txt_close.isEmpty())
                 {
                     Toast.makeText(ADDplayground.this, "Some Detials Missed", Toast.LENGTH_SHORT).show();
                 }else {
@@ -84,11 +101,15 @@ public class ADDplayground extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
                                     HashMap<String, Object> map = new HashMap<>();
                                     map.put("person name", txt_personName);
-                                    map.put("league name", txt_leagueName);
+                                    map.put("league_name", txt_leagueName);
                                     map.put("phone number", txt_phoneNo);
                                     map.put("location", txt_location);
                                     map.put("price", txt_price);
-                                    map.put("email", txt_email);
+                                    map.put("open", txt_open);
+                                    map.put("close", txt_close);
+
+
+                                    map.put("email", emaill);
                                     String image = uri.toString();
                                     map.put("image", image);
                                     referencee.push().setValue(map);

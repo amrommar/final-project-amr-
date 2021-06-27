@@ -24,7 +24,7 @@ public class Acadmy_details extends AppCompatActivity {
 
     private String recevierleague;
     private ImageView imageView;
-    private TextView profileleaguename,profilelocation,profileprice,profileemail,profileusername,profilephone;
+    private TextView profileleaguename,profilelocation,profileprice,profileemail,profileusername,profilephone,dadderss,agefrom,ageto;
     Button Add;
     private DatabaseReference referencee;
     private static final int    REQUEST_CALL=1;
@@ -48,6 +48,9 @@ public class Acadmy_details extends AppCompatActivity {
         profileprice=findViewById(R.id.PTJ);
         profileemail=findViewById(R.id.E);
         profileusername=findViewById(R.id.UN);
+        agefrom=findViewById(R.id.textView21);
+        dadderss=findViewById(R.id.textView20);
+        ageto=findViewById(R.id.textView22);
 
 
         RetriveInformation();
@@ -63,12 +66,17 @@ public class Acadmy_details extends AppCompatActivity {
                 {
                     //   String IMAGE=snapshot.child("image ").getValue().toString();
 
-                    String LEAGUENAME=snapshot.child("Acadamy name").getValue().toString();
+                    String LEAGUENAME=snapshot.child("acadamy_name").getValue().toString();
                     String LOCATION=snapshot.child("location").getValue().toString();
-                    String USERNAME=snapshot.child("person name").getValue().toString();
+                    String USERNAME=snapshot.child("playground").getValue().toString();
                     String PHONE=snapshot.child("phone number").getValue().toString();
                     String PRICE=snapshot.child("price").getValue().toString();
                     String EMAIL=snapshot.child("email").getValue().toString();
+
+
+                    String Dlocation=snapshot.child("dlocation").getValue().toString();
+                    String Agefrom=snapshot.child("age_from").getValue().toString();
+                    String Ageto=snapshot.child("age_to").getValue().toString();
 
                     String image=snapshot.child("image").getValue().toString();
                     Picasso.get().load(image).placeholder(R.drawable.addtwo).into(imageView);
@@ -80,6 +88,9 @@ public class Acadmy_details extends AppCompatActivity {
                     profilephone.setText(PHONE);
                     profileprice.setText(PRICE);
                     profileusername.setText(USERNAME);
+                    dadderss.setText(Dlocation);
+                    agefrom.setText(Agefrom);
+                    ageto.setText(Ageto);
                     //kugjgklgjfc123510
 
                 }

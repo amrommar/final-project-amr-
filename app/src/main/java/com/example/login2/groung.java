@@ -1,23 +1,23 @@
 package com.example.login2;
 
 public class groung {
-    public String name,location,image;
+    public String league_name,location,image;
 
     public groung() {
     }
 
-    public groung(String name, String location, String image) {
-        this.name = name;
+    public groung(String league_name, String location, String image) {
+        this.league_name = league_name;
         this.location = location;
         this.image = image;
     }
 
-    public String getName() {
-        return name;
+    public String getleague_name() {
+        return league_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setleague_name(String league_name) {
+        this.league_name = league_name;
     }
 
     public String getLocation() {

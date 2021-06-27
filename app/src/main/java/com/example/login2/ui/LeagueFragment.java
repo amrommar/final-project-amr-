@@ -3,12 +3,15 @@ package com.example.login2.ui;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,6 +24,10 @@ import com.example.login2.ADD_LEAGUE;
 import com.example.login2.R;
 import com.example.login2.adapter_league;
 import com.example.login2.leagues;
+import com.example.login2.myviewholder;
+import com.example.login2.profileActivity;
+import com.example.login2.ui.home.acadm;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +35,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -39,6 +47,8 @@ public class LeagueFragment extends Fragment {
     FirebaseRecyclerOptions<leagues> options;
     SharedPreferences sharedPreferences;
     String userType;
+    FirebaseRecyclerAdapter<leagues, myviewholder> Radapter;
+    EditText input;
 
 
     @Nullable
@@ -80,8 +90,80 @@ public class LeagueFragment extends Fragment {
             }
         });
 
+        ////////////////////////////////////////////////////////////////////////////////////////////
+       /* input = leagueView.findViewById(R.id.SC);
+        Loaddata("");
+
+        input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(s.toString()!=null)
+                {
+                    Loaddata(s.toString());
+                }else {
+                    Loaddata("");
+
+
+                }
+
+            }
+        });
+
+*/
+
+
         return leagueView;
     }
+  /*  private void Loaddata(String data) {
+
+        Query query = leagueref.orderByChild("location").startAt(data).endAt(data+"\uf8ff");
+        options=new FirebaseRecyclerOptions.Builder<leagues>().setQuery(query,leagues.class).build();
+        Radapter= new FirebaseRecyclerAdapter<leagues, myviewholder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull myviewholder holder, int i, @NonNull leagues model) {
+                holder.Rleaguename.setText(model.getLeague_name());
+                holder.Rlocation.setText(model.getLocation());
+                Picasso.get().load(model.getImage()).into(holder.Rimage);
+                holder.v.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String cc = getRef(i).getKey();
+                        //Toast.makeText( getContext(), "kff", Toast.LENGTH_SHORT).show();
+                        Intent intent =new Intent(getActivity(), profileActivity.class);
+                        intent.putExtra("visite_league_details",cc);
+                        startActivity(intent);
+                    }
+                });
+            }
+            @NonNull
+            @Override
+            public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_display_layout,parent,false);
+                return new myviewholder(v);
+            }
+        };
+        Radapter.startListening();
+        myleaguelist.setAdapter(Radapter);
+    }
+*/
+    ///////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
 
     //enable options menu in this fragment

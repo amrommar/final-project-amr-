@@ -24,7 +24,7 @@ public class Playground_Details extends AppCompatActivity {
 
         private String recevierplayground;
         private ImageView imageView;
-        private TextView profileleaguename,profilelocation,profileprice,profileemail,profileusername,profilephone;
+        private TextView profileleaguename,profilelocation,profileprice,profileemail,profileusername,profilephone,ppopen,ppclose;
         Button Add;
         private DatabaseReference referencee;
         private static final int    REQUEST_CALL=1;
@@ -48,6 +48,10 @@ public class Playground_Details extends AppCompatActivity {
             profileemail=findViewById(R.id.E);
             profileusername=findViewById(R.id.UN);
 
+            ppopen=findViewById(R.id.openn);
+           ppclose=findViewById(R.id.closee);
+
+
 
             RetriveInformation();
 
@@ -64,12 +68,15 @@ public class Playground_Details extends AppCompatActivity {
                     {
                         //   String IMAGE=snapshot.child("image ").getValue().toString();
 
-                        String LEAGUENAME=snapshot.child("league name").getValue().toString();
+                        String LEAGUENAME=snapshot.child("league_name").getValue().toString();
                         String LOCATION=snapshot.child("location").getValue().toString();
                         String USERNAME=snapshot.child("person name").getValue().toString();
                         String PHONE=snapshot.child("phone number").getValue().toString();
                         String PRICE=snapshot.child("price").getValue().toString();
                         String EMAIL=snapshot.child("email").getValue().toString();
+
+                        String Open=snapshot.child("open").getValue().toString();
+                        String Close=snapshot.child("close").getValue().toString();
 
                         String image=snapshot.child("image").getValue().toString();
                         Picasso.get().load(image).placeholder(R.drawable.addtwo).into(imageView);
@@ -81,6 +88,9 @@ public class Playground_Details extends AppCompatActivity {
                         profilephone.setText(PHONE);
                         profileprice.setText(PRICE);
                         profileusername.setText(USERNAME);
+
+                        ppopen.setText(Open);
+                        ppclose.setText(Close);
 
                     }
 

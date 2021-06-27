@@ -28,7 +28,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.HashMap;
 
 public class Addacadamy extends AppCompatActivity {
-    EditText phoneNo, personeName, leagueName, email, location,price;
+    EditText phoneNo, personeName, leagueName, location,price,detailedlocation,ageFrom,ageTo;
     Button save;
     ImageView imageView;
     FirebaseDatabase rootNode;
@@ -45,9 +45,15 @@ public class Addacadamy extends AppCompatActivity {
         personeName=findViewById(R.id.personeName);
         phoneNo=findViewById(R.id.phoneNo);
         leagueName=findViewById(R.id.leagueName);
-        email=findViewById(R.id.email);
+      //  email=findViewById(R.id.email);
         location=findViewById(R.id.location);
         price=findViewById(R.id.price);
+
+
+        detailedlocation=findViewById(R.id.detiledlocation);
+        ageFrom=findViewById(R.id.ageF);
+        ageTo=findViewById(R.id.ageT);
+
         save=findViewById(R.id.save);
         imageView=findViewById(R.id.imageView);
 
@@ -70,9 +76,14 @@ public class Addacadamy extends AppCompatActivity {
                 String txt_location=location.getText().toString();
                 String txt_leagueName=leagueName.getText().toString();
                 String txt_price=price.getText().toString();
-//                String txt_email=email.getText().toString();
+
+                String txt_datioled=detailedlocation.getText().toString();
+                String txt_agefrom=ageFrom.getText().toString();
+                String txt_ageto=ageTo.getText().toString();
+
+                //                String txt_email=email.getText().toString();
                 if (txt_leagueName.isEmpty() || txt_location.isEmpty() ||txt_personName.isEmpty() ||
-                        txt_phoneNo.isEmpty() || txt_price.isEmpty())
+                        txt_phoneNo.isEmpty() || txt_price.isEmpty()|| txt_datioled.isEmpty()|| txt_agefrom.isEmpty()|| txt_ageto.isEmpty())
                 {
                     Toast.makeText(Addacadamy.this, "Some Detials Missed", Toast.LENGTH_SHORT).show();
                 }else {
@@ -86,11 +97,18 @@ public class Addacadamy extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     HashMap<String, Object> map = new HashMap<>();
-                                    map.put("person name", txt_personName);
-                                    map.put("Acadamy name", txt_leagueName);
+                                    map.put("playground", txt_personName);
+                                    map.put("acadamy_name", txt_leagueName);
                                     map.put("phone number", txt_phoneNo);
                                     map.put("location", txt_location);
                                     map.put("price", txt_price);
+
+                                    map.put("dlocation", txt_datioled);
+                                    map.put("age_from", txt_agefrom);
+                                    map.put("age_to", txt_ageto);
+
+
+
                                     map.put("email", emaill);
                                     String image = uri.toString();
                                     map.put("image", image);

@@ -2,6 +2,7 @@ package com.example.login2;
 
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -27,13 +28,13 @@ import com.google.firebase.storage.UploadTask;
 import java.util.HashMap;
 
 public class ADD_LEAGUE extends AppCompatActivity {
-    EditText phoneNo, personeName, leagueName, email, location,price;
+    EditText phoneNo, personeName, leagueName, location,price,Detailedaddress,playy,numderr;
     Button save;
     ImageView imageView;
     FirebaseDatabase rootNode;
    DatabaseReference referencee = FirebaseDatabase.getInstance().getReference().child("league");
  StorageReference storageReference= FirebaseStorage.getInstance().getReference().child("image");
-
+    SharedPreferences sharedPreferences;
 
 
  private Uri imageuri;
@@ -46,11 +47,20 @@ public class ADD_LEAGUE extends AppCompatActivity {
         personeName=findViewById(R.id.personeName);
         phoneNo=findViewById(R.id.phoneNo);
         leagueName=findViewById(R.id.leagueName);
-        email=findViewById(R.id.email);
+    //    email=findViewById(R.id.email);
         location=findViewById(R.id.location);
         price=findViewById(R.id.price);
         save=findViewById(R.id.save);
         imageView=findViewById(R.id.imageView);
+        Detailedaddress=findViewById(R.id.location2);
+        playy=findViewById(R.id.Nam);
+        numderr=findViewById(R.id.Number);
+
+
+
+        sharedPreferences=getSharedPreferences("myPref",MODE_PRIVATE);
+        String emaill = sharedPreferences.getString("emaail",null);
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,9 +77,14 @@ public class ADD_LEAGUE extends AppCompatActivity {
                 String txt_location=location.getText().toString();
                 String txt_leagueName=leagueName.getText().toString();
                 String txt_price=price.getText().toString();
-                String txt_email=email.getText().toString();
-                if (txt_email.isEmpty() || txt_leagueName.isEmpty() || txt_location.isEmpty() ||txt_personName.isEmpty() ||
-                        txt_phoneNo.isEmpty() || txt_price.isEmpty())
+                String txt_detailed=Detailedaddress.getText().toString();
+                String txt_playnum=playy.getText().toString();
+                String txt_Numder=numderr.getText().toString();
+
+
+                //           String txt_email=email.getText().toString();
+                if ( txt_leagueName.isEmpty() || txt_location.isEmpty() ||txt_personName.isEmpty() ||
+                        txt_phoneNo.isEmpty() || txt_price.isEmpty()|| txt_detailed.isEmpty()|| txt_playnum.isEmpty() || txt_Numder.isEmpty())
                 {
                     Toast.makeText(ADD_LEAGUE.this, "Some Detials Missed", Toast.LENGTH_SHORT).show();
                 }else {
@@ -84,11 +99,16 @@ public class ADD_LEAGUE extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
                                     HashMap<String, Object> map = new HashMap<>();
                                     map.put("person name", txt_personName);
-                                    map.put("league name", txt_leagueName);
+                                    map.put("league_name", txt_leagueName);
                                     map.put("phone number", txt_phoneNo);
                                     map.put("location", txt_location);
                                     map.put("price", txt_price);
-                                    map.put("email", txt_email);
+                                    map.put("email", emaill);
+
+                                    map.put("detailed_address", txt_detailed);
+                                    map.put("playground", txt_playnum);
+                                    map.put("number", txt_Numder);
+
                                     String image = uri.toString();
                                    map.put("image", image);
                                     referencee.push().setValue(map);

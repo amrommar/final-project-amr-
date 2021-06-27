@@ -51,12 +51,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="25dp"
-                android:layout_marginRight="25dp"
                 android:ems="10"
-                android:hint="Content Person Name"
+                android:hint="playground name"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -68,29 +66,25 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="42dp"
                 android:layout_marginEnd="25dp"
-                android:layout_marginRight="25dp"
                 android:ems="10"
                 android:hint="Location"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/save" />
+                app:layout_constraintTop_toBottomOf="@+id/ageF" />
 
             <EditText
                 android:id="@+id/leagueName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="25dp"
-                android:layout_marginRight="25dp"
                 android:ems="10"
-                android:hint="League Name"
+                android:hint="Acadmy Name"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -101,16 +95,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="19dp"
                 android:layout_marginEnd="50dp"
-                android:layout_marginRight="50dp"
                 android:layout_marginBottom="15dp"
                 android:text="ADD"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/price" />
+                app:layout_constraintTop_toBottomOf="@+id/detiledlocation" />
 
             <EditText
                 android:id="@+id/phoneNo"
@@ -146,6 +138,46 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phoneNo" />
+
+            <EditText
+                android:id="@+id/detiledlocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                android:ems="10"
+                android:hint="detiled locatio"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/location" />
+
+            <EditText
+                android:id="@+id/ageF"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint="age from"
+                android:inputType="number"
+                app:layout_constraintEnd_toStartOf="@+id/ageT"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/price" />
+
+            <EditText
+                android:id="@+id/ageT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint="age to"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ageF"
+                app:layout_constraintTop_toBottomOf="@+id/price" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

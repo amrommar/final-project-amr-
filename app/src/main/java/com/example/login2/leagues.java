@@ -1,16 +1,27 @@
 package com.example.login2;
 
 public class leagues {
-    public String email, leaguename, location;
+    public String email, league_name, location,image;
 
     public leagues() {
 
     }
 
-    public leagues(String email, String leaguename, String location) {
+    public leagues(String email,String image,String league_name, String location) {
         this.email = email;
-        this.leaguename = leaguename;
+        this.league_name = league_name;
         this.location = location;
+        this.image = image;
+
+
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getEmail() {
@@ -21,12 +32,12 @@ public class leagues {
         this.email = email;
     }
 
-    public String getLeaguename() {
-        return leaguename;
+    public String getLeague_name() {
+        return league_name;
     }
 
-    public void setLeaguename(String leaguename) {
-        this.leaguename = leaguename;
+    public void setLeaguename(String league_name) {
+        this.league_name = league_name;
     }
 
     public String getLocation() {
