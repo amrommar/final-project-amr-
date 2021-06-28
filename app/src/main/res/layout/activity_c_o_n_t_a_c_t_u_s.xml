@@ -6,4 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".CONTACTUS">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="181dp"
+        android:background="#E4FFC107">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/ff" />
+
+        <TextView
+            android:id="@+id/textView273"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="our page :"
+            android:layout_marginLeft="15dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/bungee"/>
+
+        <TextView
+            android:id="@+id/textView222"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="@string/hyperlink" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="***************************************"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:textAlignment="center"/>
+
+
+        <TextView
+            android:id="@+id/textView237"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="our phone :"
+            android:layout_marginLeft="15dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/bungee"/>
+        <TextView
+            android:id="@+id/textView252"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text=" 01200327415"
+            android:drawableLeft="@drawable/ic_baseline_call_24"/>
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

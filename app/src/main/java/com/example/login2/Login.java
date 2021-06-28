@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Pair;
@@ -75,6 +76,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
         sharedPreferences=getSharedPreferences("myPref",MODE_PRIVATE);
@@ -150,9 +152,7 @@ public class Login extends AppCompatActivity {
         Guest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent  intentGuest = new Intent(Login.this,Project.class);
-                startActivity(intentGuest);
-                finish();
+                seetGuest("Client");
             }
         });
 
@@ -170,6 +170,18 @@ public class Login extends AppCompatActivity {
 
 
     }
+
+    private void seetGuest(String guestType){
+        guestType.equals("");
+        SharedPreferences.Editor  editor=sharedPreferences.edit();
+        editor.putString("userType",guestType);
+        editor.apply();
+        Intent  intentGuest = new Intent(Login.this,Project.class);
+        startActivity(intentGuest);
+        finish();
+
+    }
+
 
 
 
@@ -472,9 +484,7 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intentGoogle = new Intent(getApplicationContext() , Project.class);
-                            startActivity(intentGoogle);
-                            finish();
+                            seetGuest("Client");
 
                         } else {
                             // If sign in fails, display a message to the user.

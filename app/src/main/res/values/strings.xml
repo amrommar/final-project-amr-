@@ -15,6 +15,6 @@
     <string name="menu_Share">Share</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="hyperlink"> please visit <a href="https://www.facebook.com/Find-me-playground-108038674868149">fmp.com</a> </string>
 
 </resources>

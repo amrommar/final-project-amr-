@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
@@ -24,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class Mainprof extends AppCompatActivity implements View.OnClickListener {
+public class Mainprof extends AppCompatActivity  {
 
     // private DatabaseReference referencee;
 
@@ -41,12 +42,12 @@ public class Mainprof extends AppCompatActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_mainprof);
         sharedPreferences = getSharedPreferences("myPref", MODE_PRIVATE);
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
-        card1 = (CardView) findViewById(R.id.c1);
-        card1.setOnClickListener(this);
+
 
 
         //Hooks
@@ -79,22 +80,13 @@ public class Mainprof extends AppCompatActivity implements View.OnClickListener 
 
     public void LogOut(View view) {
         FirebaseAuth.getInstance().signOut();
+        sharedPreferences = getSharedPreferences("myPref", MODE_PRIVATE);
+        sharedPreferences.edit().clear().commit();
         Intent LoginActivity = new Intent(this, Login.class);
         startActivity(LoginActivity);
         finish();
     }
 
 
-    @Override
-    public void onClick(View v) {
-        Intent i;
 
-        switch (v.getId()) {
-            case R.id.c1:
-                i = new Intent(this, booking.class);
-                startActivity(i);
-                break;
-
-        }
-    }
 }

@@ -2,6 +2,7 @@ package com.example.login2;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -37,6 +38,7 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_sign_up);
         auth = FirebaseAuth.getInstance();
 //        admin = findViewById(R.id.admin);
@@ -197,8 +199,8 @@ public class SignUp extends AppCompatActivity {
         editor.putString("userType",genderradioButton.getText().toString());
         editor.apply();
 
+        auth.createUserWithEmailAndPassword(email,password);
         Intent intennt = new Intent(SignUp.this,Project.class);
-
         startActivity(intennt);
         finish();
 
