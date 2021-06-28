@@ -119,8 +119,9 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="phone"
+            android:text=" phone"
             android:padding="15dp"
+            android:drawableLeft="@drawable/ccaall"
              />
 
 
@@ -150,7 +151,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="price to join"
+                android:text=" price to join"
+                android:drawableLeft="@drawable/pprriiccee"
                 />
 
             <TextView
@@ -179,7 +181,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="email"
+                android:text=" email"
+                android:drawableLeft="@drawable/eemmaaiill"
                  />
 
 
@@ -207,8 +210,9 @@
                 android:id="@+id/textView17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="detailed adderss"
+                android:text=" detailed adderss"
                 android:padding="15dp"
+                android:drawableLeft="@drawable/loccc"
                  />
 
             <TextView
@@ -237,8 +241,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="age from"
-
+                android:text=" age from"
+                android:drawableLeft="@drawable/ic_baseline_child_care_24"
                  />
 
             <TextView
@@ -265,8 +269,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            android:padding="15dp"
-            android:text="age to"
-
+            android:text=" age to"
+            android:drawableLeft="@drawable/ic_baseline_child_care_24"
             />
 
 

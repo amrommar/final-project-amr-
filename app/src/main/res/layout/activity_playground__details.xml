@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-
+                android:drawableLeft="@drawable/sooccer"
                 android:text=" playground"
                 />
 
@@ -67,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:text=" Location"
                 android:padding="15dp"
+                android:drawableLeft="@drawable/loccc"
                 />
 
             <TextView
@@ -94,6 +95,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:text=" location details"
+                android:drawableLeft="@drawable/loccc"
                 />
 
             <TextView
@@ -121,8 +123,9 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="phone"
+                android:text=" phone"
                 android:padding="15dp"
+                android:drawableLeft="@drawable/ccaall"
                 />
 
 
@@ -152,7 +155,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="price to join"
+                android:text=" price to join"
+                android:drawableLeft="@drawable/pprriiccee"
                 />
 
             <TextView
@@ -181,7 +185,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="email"
+                android:text=" email"
+                android:drawableLeft="@drawable/eemmaaiill"
                 />
 
 
@@ -212,7 +217,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="close"
+                android:text=" open"
+                android:drawableLeft="@drawable/ic_baseline_access_time_24"
 
                 />
 
@@ -241,7 +247,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:text="close"
-
+                android:drawableLeft="@drawable/ic_baseline_access_time_24"
                 />
 
 

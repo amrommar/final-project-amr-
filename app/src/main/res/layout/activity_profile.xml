@@ -36,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:text=" Person Name"
+                android:drawableLeft="@drawable/human"
                 />
 
             <TextView
@@ -64,7 +65,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" Location"
-                android:padding="15dp"/>
+                android:padding="15dp"
+                android:drawableLeft="@drawable/loccc"/>
 
 
             <TextView
@@ -93,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-
+                android:drawableLeft="@drawable/sporrt"
                 android:text=" League name"
                 />
 
@@ -126,8 +128,9 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="phone"
+                android:text=" phone"
                 android:padding="15dp"
+                android:drawableLeft="@drawable/ccaall"
                 />
 
 
@@ -157,7 +160,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="price to join"
+                android:text=" price to join"
+                android:drawableLeft="@drawable/pprriiccee"
                 />
 
             <TextView
@@ -186,7 +190,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="email"
+                android:text=" email"
+                android:drawableLeft="@drawable/eemmaaiill"
                 />
 
 
@@ -217,8 +222,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="Detailed Address"
-
+                android:text=" Detailed Address"
+                android:drawableLeft="@drawable/loccc"
                 />
 
             <TextView
@@ -230,6 +235,7 @@
                 android:layout_marginTop="-15dp"
                 android:fontFamily="@font/bungee"
                 android:padding="15dp"
+
                 />
 
 
@@ -245,7 +251,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="Playground"
+                android:text=" Playground"
+                android:drawableLeft="@drawable/ssoocceerr"
                 />
 
 
@@ -275,8 +282,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="Teams number"
-
+            android:text=" Teams number"
+            android:drawableLeft="@drawable/ic_baseline_people_alt_24"
             />
 
 

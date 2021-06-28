@@ -165,13 +165,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/bungee"
-                android:text="Update"
-                android:background="@drawable/custom_fb_button"
-                />
+
 
             <Button
                 android:id="@+id/btn_signout"
