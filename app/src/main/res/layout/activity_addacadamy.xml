@@ -130,20 +130,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/leagueName" />
 
 
-
             <EditText
                 android:id="@+id/price"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="25dp"
-                android:layout_marginRight="25dp"
-                android:ems="10"
-                android:hint=" Price To Join $"
-                android:inputType="phone"
                 android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+                android:ems="10"
+                android:hint=" Price To Join (EGP)"
+                android:inputType="phone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phoneNo" />

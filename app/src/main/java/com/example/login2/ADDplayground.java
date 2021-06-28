@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.login2.ui.ReserveFragment;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -100,8 +101,8 @@ public class ADDplayground extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     HashMap<String, Object> map = new HashMap<>();
-                                    map.put("person name", txt_personName);
-                                    map.put("league_name", txt_leagueName);
+                                    map.put("person name", txt_leagueName);
+                                    map.put("league_name", txt_personName);
                                     map.put("phone number", txt_phoneNo);
                                     map.put("location", txt_location);
                                     map.put("price", txt_price);
@@ -133,14 +134,19 @@ public class ADDplayground extends AppCompatActivity {
                         }
                     });
 
-                    // Intent ii = new Intent(ADD_LEAGUE.this, Project.class);
-                    //  startActivity(ii);
+                     Intent ii = new Intent(ADDplayground.this, Project.class);
+                      startActivity(ii);
 
-                }}
+                }
+
+            }
         });
 
 
     }
+
+
+
 
 
     private void choosepic() {

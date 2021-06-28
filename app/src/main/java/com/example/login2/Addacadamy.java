@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.login2.ui.AcademyFragment;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -133,8 +134,8 @@ public class Addacadamy extends AppCompatActivity {
                         }
                     });
 
-                    // Intent ii = new Intent(ADD_LEAGUE.this, Project.class);
-                    //  startActivity(ii);
+                    Intent ii = new Intent(Addacadamy.this, Project.class);
+                    startActivity(ii);
 
                 }}
         });
